@@ -229,19 +229,14 @@ async function createTagsArchive({ tags, gatsbyUtilities, postsPerPage }) {
               path: getPagePath(pageNumber),
 
               // use the blog post archive template as the page component
-              component: path.resolve(`./src/templates/blog-post-archive.js`),
+              component: path.resolve(`./src/templates/tag.js`),
 
               // `context` is available in the template as a prop and
               // as a variable in GraphQL.
               context: {
-                // the index of our loop is the offset of which posts we want to display
-                // so for page 1, 0 * 10 = 0 offset, for page 2, 1 * 10 = 10 posts offset,
-                // etc
                 offset: index * postsPerPage,
-
-                // We need to tell the template how many posts to display too
+                slug: tag.slug,
                 postsPerPage,
-
                 nextPagePath: getPagePath(pageNumber + 1),
                 previousPagePath: getPagePath(pageNumber - 1),
               },
@@ -287,7 +282,7 @@ async function createCategoriesArchive({
               path: getPagePath(pageNumber),
 
               // use the blog post archive template as the page component
-              component: path.resolve(`./src/templates/blog-post-archive.js`),
+              component: path.resolve(`./src/templates/category.js`),
 
               // `context` is available in the template as a prop and
               // as a variable in GraphQL.
@@ -296,7 +291,7 @@ async function createCategoriesArchive({
                 // so for page 1, 0 * 10 = 0 offset, for page 2, 1 * 10 = 10 posts offset,
                 // etc
                 offset: index * postsPerPage,
-
+                slug: category.slug,
                 // We need to tell the template how many posts to display too
                 postsPerPage,
 
@@ -394,6 +389,7 @@ async function getTags({ graphql, reporter }) {
           tag: node {
             id
             uri
+            slug
             count
             posts {
               nodes {
@@ -427,6 +423,7 @@ async function getCategories({ graphql, reporter }) {
           category: node {
             id
             uri
+            slug
             count
             posts {
               nodes {
