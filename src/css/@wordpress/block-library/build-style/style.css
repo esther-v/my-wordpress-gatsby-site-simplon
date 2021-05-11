@@ -3009,3 +3009,10 @@ pre.wp-block-verse {
   width: auto;
   z-index: 100000;
 }
+
+.blocks-gallery-grid {
+  max-width: 100%;
+}
+.blocks-gallery-grid .inline-gatsby-image-wrapper {
+  height: 100%;
+}
