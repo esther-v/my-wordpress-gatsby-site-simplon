@@ -13,3 +13,23 @@ aside {
     text-decoration: none;
     color: rgb(75, 95, 114);
 }
+
+article {
+    margin-bottom: 20px;
+}
+
+article a {
+    text-decoration: none;
+}
+
+article h6 {
+    color: rgb(30, 126, 128);
+    margin: 5px 0;
+}
+
+article p {
+    text-align: left;
+    color: rgb(75, 95, 114);
+    margin: 0;
+    font-size: 14px;
+}

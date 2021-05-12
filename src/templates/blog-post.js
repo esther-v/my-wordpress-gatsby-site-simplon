@@ -36,6 +36,7 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
           <p>{post.date}</p>
 
           {/* if we have a featured image for this post let's display it */}
+          <div className="post-image">
           {featuredImage?.fluid && (
             <Image
               fluid={featuredImage.fluid}
@@ -43,6 +44,7 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
               style={{ marginBottom: 50 }}
             />
           )}
+          </div>
         </header>
 
         {!!post.content && (

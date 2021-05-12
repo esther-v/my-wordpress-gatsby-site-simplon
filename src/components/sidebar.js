@@ -9,14 +9,15 @@ const Sidebar = () => {
           nodes {
             uri
             name
+            id
           }
         }
-        allWpPost(filter: {date: {gt: "2019-12-01"}}, limit: 10) {
+        allWpPost(filter: {date: {gt: "2019-12-01"}}, sort: {fields: date, order: DESC}) {
           nodes {
             id
             title
             uri
-            date(formatString: "")
+            date(formatString: "MMMM DD, YYYY")
           }
         }
         allWpCategory {
@@ -29,12 +30,34 @@ const Sidebar = () => {
     `)
     console.log(data)
     const categories = data.allWpCategory.nodes
-    console.log(categories)
+    const tags = data.allWpTag.nodes
+    const posts = data.allWpPost.nodes
     return (
         <aside>
             <h4>Recent posts</h4>
+                {posts.map(el => {
+                    return (
+                        
+                            <article key={el.id}>
+                                <a href={el.uri}>
+                                    <h6>{el.title}</h6>
+                                    <p>{el.date}</p>
+                                </a>
+                            </article>
+                        
+                    )
+                })}
                 
             <h4>Widgets</h4>
+                <ul className="cat">
+                    {tags.map(el => {
+                        return (
+                            <li key={el.id}>
+                                <a href={el.uri}>#{el.name}</a>
+                            </li>
+                        )
+                    })}
+                </ul>
             <h4>Categories</h4>
                 <ul className="cat">
                     {categories.map(el => {

@@ -260,6 +260,9 @@ a:focus {
   display:flex;
 }
 
+.post-image {
+  width: 45%;
+}
 
 .global-wrapper {
   /* margin: var(--spacing-0) auto; */
