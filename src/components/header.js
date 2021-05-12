@@ -21,7 +21,7 @@ const Header = (props) => {
         <header className="global-header">
         {isHomePage ? (
           <h1 className="main-heading">
-            <Link to="/">{title}</Link>
+            <Link to="/">🌿{title}</Link>
           </h1>
         ) : (
           <Link className="header-link-home" to="/">

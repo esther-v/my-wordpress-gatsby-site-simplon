@@ -9,8 +9,8 @@ const Bio = () => {
     <div className="bio">
       
         <p >
-          customized by <strong>Esther, </strong>
-          junior javascript developer
+          🎨 customized by <strong>Esther, </strong>
+          junior javascript developer 
         </p> 
       
     </div>
