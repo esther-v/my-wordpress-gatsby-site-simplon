@@ -5,6 +5,8 @@ import parse from "html-react-parser"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import Sidebar from "../components/sidebar"
+
 
 const BlogIndex = ({
   data,
@@ -31,7 +33,10 @@ const BlogIndex = ({
 
       <Bio />
 
-      <ol style={{ listStyle: `none` }}>
+
+      <div className="container">
+
+      <ol className="posts-homepage" style={{ listStyle: `none` }}>
         {posts.map(post => {
           const title = post.title
 
@@ -56,6 +61,10 @@ const BlogIndex = ({
           )
         })}
       </ol>
+
+      <Sidebar/>
+
+      </div>
 
       {previousPagePath && (
         <>

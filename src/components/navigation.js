@@ -1,5 +1,6 @@
 import React from 'react'
 import {useStaticQuery, graphql, Link} from "gatsby"
+import '../css/style-components/header.css'
 
 const Navigation = () => {
     const data = useStaticQuery(graphql`

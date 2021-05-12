@@ -1,6 +1,7 @@
 import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import Navigation from './navigation'
+import '../css/style-components/header.css';
 
 const Header = (props) => {
     const {isHomePage} = props
