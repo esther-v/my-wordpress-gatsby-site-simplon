@@ -48,7 +48,7 @@ const Sidebar = () => {
                     )
                 })}
                 
-            <h4>Widgets</h4>
+            <h4>Tags</h4>
                 <ul className="cat">
                     {tags.map(el => {
                         return (
